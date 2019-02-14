@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TravelRecordApp.NewTravelPage">
@@ -12,14 +12,15 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="expretienceEntry"
+                   Margin="16"
                    Placeholder="Write your experience"/>
             <ListView  x:Name="venueListView"
-                       Margin="20, 0"
+                       RowHeight="60"
                        HorizontalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
+                            <Grid Padding="16,10">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
@@ -35,6 +36,7 @@
                                        TextColor="DodgerBlue"
                                        Text="{Binding location.address}"/>
                                 <Label Grid.Column="1"
+                                       VerticalOptions="Center"
                                        Text="{Binding location.distance, StringFormat='{0} meters'}" />
                             </Grid>
                         </ViewCell>

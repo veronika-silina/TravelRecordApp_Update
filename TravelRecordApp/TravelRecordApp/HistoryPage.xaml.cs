@@ -32,5 +32,15 @@ namespace TravelRecordApp
             var posts = await App.MobileService.GetTable<Post>().Where(p => p.UserId == App.user.Id).ToListAsync();
             postListView.ItemsSource = posts;
         }
+
+        void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            var selectedPost = postListView.SelectedItem as Post;
+
+            if(selectedPost != null)
+            {
+                Navigation.PushAsync(new PostDetailsPage(selectedPost));
+            }
+        }
     }
 }
