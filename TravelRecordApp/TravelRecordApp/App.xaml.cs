@@ -13,7 +13,7 @@ namespace TravelRecordApp
         public static string DatabaseLocation = string.Empty;
         public static MobileServiceClient MobileService =
             new MobileServiceClient(
-            "https://travelrecordapp.azurewebsites.net"
+            "https://travelrecordappxam.azurewebsites.net"
         );
         public App()
         {
